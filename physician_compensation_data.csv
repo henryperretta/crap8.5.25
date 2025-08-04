@@ -1,0 +1,41 @@
+Specialty,Salary,Category,Specialty_Type,Surgical,Rank_in_Category,Overall_Rank
+Neurology,749140,Highest Paid,General,Non-Surgical,1,1
+Thoracic surgery,689969,Highest Paid,General,Surgical,2,2
+Orthopedic surgery,679517,Highest Paid,General,Surgical,3,3
+General pediatric surgery,647721,Highest Paid,Pediatric,Surgical,4,4
+Plastic surgery,621445,Highest Paid,General,Surgical,5,5
+Oral and maxillofacial surgery,616748,Highest Paid,General,Surgical,6,6
+Radiation oncology,588678,Highest Paid,General,Non-Surgical,7,7
+Cardiology,587360,Highest Paid,General,Non-Surgical,8,8
+Vascular surgery,576452,Highest Paid,General,Surgical,9,9
+Gastroenterology,573870,Highest Paid,General,Non-Surgical,10,10
+Interventional radiology,572617,Highest Paid,General,Non-Surgical,11,11
+Radiology,571749,Highest Paid,General,Non-Surgical,12,12
+Urology,559474,Highest Paid,General,Non-Surgical,13,13
+Otolaryngology,523369,Highest Paid,General,Non-Surgical,14,14
+Anesthesia,523277,Highest Paid,General,Non-Surgical,15,15
+Dermatology,508401,Highest Paid,General,Non-Surgical,16,16
+Oncology,502465,Highest Paid,General,Non-Surgical,17,17
+Colon and rectal surgery,487085,Highest Paid,General,Surgical,18,18
+General surgery,482574,Highest Paid,General,Surgical,19,19
+Ophthalmology,477232,Highest Paid,General,Non-Surgical,20,20
+Internal medicine,326116,Lowest Paid,General,Non-Surgical,1,21
+Rheumatology,324954,Lowest Paid,General,Non-Surgical,2,22
+Infectious disease,320730,Lowest Paid,General,Non-Surgical,3,23
+Family medicine,318959,Lowest Paid,General,Non-Surgical,4,24
+Pediatric emergency medicine,312271,Lowest Paid,Pediatric,Non-Surgical,5,25
+Preventative medicine,310177,Lowest Paid,General,Non-Surgical,6,26
+Allergy and immunology,308846,Lowest Paid,General,Non-Surgical,7,27
+Pediatric gastroenterology,298457,Lowest Paid,Pediatric,Non-Surgical,8,28
+Medicine / pediatrics,296665,Lowest Paid,Pediatric,Non-Surgical,9,29
+Geriatrics,291968,Lowest Paid,General,Non-Surgical,10,30
+Endocrinology,290606,Lowest Paid,General,Non-Surgical,11,31
+Child neurology,289738,Lowest Paid,Pediatric,Non-Surgical,12,32
+Pediatric pulmonology,282000,Lowest Paid,Pediatric,Non-Surgical,13,33
+Pediatrics,265230,Lowest Paid,Pediatric,Non-Surgical,14,34
+Pediatric nephrology,263031,Lowest Paid,Pediatric,Non-Surgical,15,35
+Medical genetics,259564,Lowest Paid,General,Non-Surgical,16,36
+Pediatric hematology and oncology,255733,Lowest Paid,Pediatric,Non-Surgical,17,37
+Pediatric infectious disease,248322,Lowest Paid,Pediatric,Non-Surgical,18,38
+Pediatric rheumatology,231574,Lowest Paid,Pediatric,Non-Surgical,19,39
+Pediatric endocrinology,230426,Lowest Paid,Pediatric,Non-Surgical,20,40

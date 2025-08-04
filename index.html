@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physician Compensation Dashboard 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Physician Compensation Dashboard 2025</h1>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">37,000</span>
+                        <span class="stat-label">Physicians Surveyed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">+3.7%</span>
+                        <span class="stat-label">Average Pay Increase</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">$749K</span>
+                        <span class="stat-label">Highest Paid (Neurology)</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-main">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h3>Filters & Controls</h3>
+                    
+                    <div class="filter-group">
+                        <label class="form-label" for="categoryFilter">Category</label>
+                        <select id="categoryFilter" class="form-control">
+                            <option value="All">All Categories</option>
+                            <option value="Highest Paid">Highest Paid</option>
+                            <option value="Lowest Paid">Lowest Paid</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="form-label" for="specialtyTypeFilter">Specialty Type</label>
+                        <select id="specialtyTypeFilter" class="form-control">
+                            <option value="All">All Types</option>
+                            <option value="General">General</option>
+                            <option value="Pediatric">Pediatric</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="form-label" for="surgicalFilter">Surgical Type</label>
+                        <select id="surgicalFilter" class="form-control">
+                            <option value="All">All Types</option>
+                            <option value="Surgical">Surgical</option>
+                            <option value="Non-Surgical">Non-Surgical</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="form-label" for="searchFilter">Search Specialty</label>
+                        <input type="text" id="searchFilter" class="form-control" placeholder="Type to search..." autocomplete="off">
+                    </div>
+
+                    <div class="filter-actions">
+                        <button id="resetFilters" class="btn btn--secondary btn--full-width">Reset Filters</button>
+                        <button id="exportData" class="btn btn--primary btn--full-width">Export Data (CSV)</button>
+                    </div>
+
+                    <div class="data-source">
+                        <h4>Data Source</h4>
+                        <p>Doximity Physician Compensation Report 2025</p>
+                        <p class="small-text">Based on survey responses from 37,000 physicians</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Summary Statistics -->
+                <section class="summary-section">
+                    <div class="summary-cards">
+                        <div class="summary-card">
+                            <h4>Average Salary</h4>
+                            <div class="summary-value" id="avgSalary">$0</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Median Salary</h4>
+                            <div class="summary-value" id="medianSalary">$0</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Salary Range</h4>
+                            <div class="summary-value" id="salaryRange">$0 - $0</div>
+                        </div>
+                        <div class="summary-card">
+                            <h4>Total Specialties</h4>
+                            <div class="summary-value" id="totalSpecialties">0</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Charts Section -->
+                <section class="charts-section">
+                    <div class="chart-container-wrapper">
+                        <div class="chart-header">
+                            <h3>Highest Paid Specialties</h3>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 500px;">
+                            <canvas id="highestPaidChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-container-wrapper">
+                        <div class="chart-header">
+                            <h3>Lowest Paid Specialties</h3>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 500px;">
+                            <canvas id="lowestPaidChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-container-wrapper">
+                        <div class="chart-header">
+                            <h3>Pediatric vs General Specialties</h3>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <canvas id="comparisonChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-container-wrapper">
+                        <div class="chart-header">
+                            <h3>Growth Rate Analysis</h3>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="growthChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-container-wrapper">
+                        <div class="chart-header">
+                            <h3>Salary vs Rank Scatter Plot</h3>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <canvas id="scatterChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data Table Section -->
+                <section class="table-section">
+                    <div class="table-header">
+                        <h3>Detailed Specialty Data</h3>
+                        <div class="table-controls">
+                            <select id="sortBy" class="form-control">
+                                <option value="Salary">Sort by Salary</option>
+                                <option value="Specialty">Sort by Specialty</option>
+                                <option value="Overall_Rank">Sort by Rank</option>
+                                <option value="Category">Sort by Category</option>
+                                <option value="Specialty_Type">Sort by Type</option>
+                            </select>
+                            <select id="sortOrder" class="form-control">
+                                <option value="desc">Descending</option>
+                                <option value="asc">Ascending</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table id="dataTable" class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Specialty</th>
+                                    <th>Salary</th>
+                                    <th>Category</th>
+                                    <th>Type</th>
+                                    <th>Surgical</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
